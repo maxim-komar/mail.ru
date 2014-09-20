@@ -10,5 +10,6 @@
     echo "deb-src http://tarantool.org/dist/master/ubuntu/ $release main" | \
     sudo tee -a /etc/apt/sources.list.d/tarantool.list
     sudo apt-get update
-    sudo apt-get install tarantool tarantool-client
+    sudo apt-get install tarantool
+    sudo apt-get install tarantool-client
 
