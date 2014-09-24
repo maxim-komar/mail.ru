@@ -32,4 +32,5 @@ pack = function (t)
     return res
 end
 
-pack{1, 1, 1, 1, 2, 3, 3, 1, 1, 4, 5, 5, 5, 5}
+dofile 'dumper.lua'
+print(DataDumper(pack{1, 1, 1, 1, 2, 3, 3, 1, 1, 4, 5, 5, 5, 5}))
