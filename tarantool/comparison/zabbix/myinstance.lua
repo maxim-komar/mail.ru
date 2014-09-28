@@ -21,5 +21,5 @@ insert_trends_uint = function (t)
     local itemid, clock = unpack(t)
     local pname = trends_uint_tablename .. tostring(math.floor(clock / part_size))
     
-    box.space[pname]:insert(t)
+    box.space[pname]:replace(t)
 end
