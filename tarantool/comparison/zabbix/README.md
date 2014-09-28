@@ -33,10 +33,9 @@
 
 ### Запустим tarantool и соединимся
 
-- запустим tarantool с конфигурационным файлом **myinstance.lua**
-- соединимся
+запустим tarantool с конфигурационным файлом **myinstance.lua** и соединимся
 
-    -- tarantool
+    tarantool
     -- > box.cfg{}
     -- > console = require('console')
     -- > console.connect('localhost', 3301)
