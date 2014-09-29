@@ -103,10 +103,11 @@
 
     wget -q http://maxim-komar.ru/data/kv/mytasks.tar.gz
 
-Проверим:
+Проверим и распакуем:
 
     $ md5sum mytasks.tar.gz 
     8bdb8d293bc80d8c623496742ddf075b  mytasks.tar.gz
+    $ tar zxfp mytasks.tar.gz
 
 Архив представляет собой набор файлов в tsv-формате, столбцы означают:
 
