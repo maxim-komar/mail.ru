@@ -9,6 +9,8 @@ open(FILE, '<', $file);
 my @data = <FILE>;
 close FILE;
 
+exit 0 unless @data;    # empty file
+
 my $pat = qr/^(\d+)\t(\d+)\t(\d+)\t(\d+)/;
 my @tuples = map { $_ =~ $pat; {num => $1, itemid => $2, from => $3, to => $4} } @data;
 
