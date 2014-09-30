@@ -118,8 +118,14 @@
 
 Первое поле необходимо нам, чтобы проверить, что функция, которая будет делать выборку из MySQL и Tarantool, возвращает результат, похожий на правду.
 
-### тесты
+### тесты (один поток)
 
 #### mysql
 
     for i in `ls mytasks.[0-9]* `; do ./mysql.pl $i; done > results/mysql.res
+
+#### tarantool
+
+    for i in `ls mytasks.[0-9]* `; do ./tnt.py $i; done > results/tarantool.tree.py.res
+
+### сравнение результатов
