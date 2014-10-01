@@ -10,8 +10,6 @@ while(<>){
     $h{$file}{iter} += $iter;
     $h{$file}{total} += $total_time;
 }
-use Data::Dumper;
-print Dumper(\%h);
 
 print "| solution | select time, us|\n";
 print "|----------|----------------|\n";
