@@ -13,4 +13,4 @@ for i in range(iterations):
     c.select('trends_uint', [itemid, clock])
 ft = time.time()
 
-print "%d\t%d\t%d\t%.4f\t%.6f" % (itemid, clock, iterations, (ft - st), (ft - st) / iterations)
+print "%s\t%d\t%d\t%d\t%.4f\t%.6f" % (sys.argv[0], itemid, clock, iterations, (ft - st), (ft - st) / iterations)

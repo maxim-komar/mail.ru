@@ -17,4 +17,4 @@ for(my $i = 0; $i < $iter; $i++){
 }
 my $ft = gettimeofday;
 
-printf "%d\t%d\t%d\t%.4f\t%.6f\n", $itemid, $clock, $iter, ($ft - $st), ($ft - $st) / $iter;
+printf "%s\t%d\t%d\t%d\t%.4f\t%.6f\n", $0, $itemid, $clock, $iter, ($ft - $st), ($ft - $st) / $iter;
