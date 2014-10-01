@@ -5,6 +5,10 @@
 
 ## Вывод
 
+Используемый клиент для tarantool дал результаты, сравнимые с обычными запросами к mysql. 
+При этом плагин handlersocket ускоряет решение примерно в 3 раза.
+Однако тестовая функция на lua указывает на то, что клиент может быть сильно неоптимальным.
+
 ## Решение
 
 ### Подготовим хранилища
@@ -98,3 +102,20 @@ tarantool (в консоли tarantool):
     - 1 us
     ...
 
+
+### профилирование решения на python:
+
+    $ python -m cProfile -s time tnt2.py mytasks2 
+    tnt2.py -   -   5290678 1258.7670   0.000238
+    1961553310 function calls (1793286586 primitive calls) in 1267.561 seconds
+
+    Ordered by: internal time
+
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    111104258/15872037  151.605    0.000  289.386    0.000 fallback.py:510(_pack)
+    119531002  134.163    0.000  157.254    0.000 fallback.py:239(_fb_read)
+    83615837/15872037  106.018    0.000  382.605    0.000 fallback.py:382(_fb_unpack)
+    10581359  105.633    0.000  105.633    0.000 {method 'recv' of '_socket.socket' objects}
+    83615837   97.418    0.000  270.106    0.000 fallback.py:269(_read_header)
+    370347581   61.008    0.000   61.008    0.000 {isinstance}
+    ...
