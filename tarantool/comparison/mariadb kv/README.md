@@ -75,4 +75,26 @@ tarantool (в консоли tarantool):
 собственно, сама выборка
 
     ./t2_mysql.pl mytasks2 > results/maria_ssd_vs_tarantool2.res
+    ./tnt2.py mytasks2 >> results/maria_ssd_vs_tarantool2.res
+
+результаты в табличном виде:
+
+| solution | select time, us|
+|----------|----------------|
+| ./tnt2.py | 180 |
+| mysql | 196 |
+| mysql hs | 62 |
+| mysql hs (rw) | 72 |
+| mysql prep | 138 |
+
+#### Сделаем выборку из шелла tarantool:
+
+    localhost:3301> dofile '/home/max/projects/mail.ru/tarantool/comparison/mariadb kv/test_lua.lua'
+    ---
+    ...
+    
+    localhost:3301> test_lua()
+    ---
+    - 1 us
+    ...
 
