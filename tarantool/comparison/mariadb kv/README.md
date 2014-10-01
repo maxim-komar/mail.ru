@@ -50,3 +50,29 @@ tarantool (в консоли tarantool):
     - 147099501
     ...
 
+### Тесты
+
+#### Сделаем много итераций по нескольким парам (itemid, clock) (смотри test.sh)
+
+Результаты в табличном виде:
+
+| solution | select time, us|
+|----------|----------------|
+| ./mysql.pl | 190 |
+| ./mysql2.pl | 144 |
+| ./mysql_hs.pl | 65 |
+| ./mysql_hs2.pl | 69 |
+| ./tnt.py | 199 |
+
+
+#### Сделаем выборку по большому количество пар:
+
+    $ wget -q http://maxim-komar.ru/data/kv/mytasks2.gz
+    $ md5sum mytasks2.gz 
+    da6937fbd1cbb62ac03f78909b22949f  mytasks2.gz
+    $ gzip -d mytasks2.gz
+
+собственно, сама выборка
+
+    ./t2_mysql.pl mytasks2 > results/maria_ssd_vs_tarantool2.res
+
