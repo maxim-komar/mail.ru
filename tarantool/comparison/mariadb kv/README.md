@@ -119,3 +119,12 @@ tarantool (в консоли tarantool):
     83615837   97.418    0.000  270.106    0.000 fallback.py:269(_read_header)
     370347581   61.008    0.000   61.008    0.000 {isinstance}
     ...
+
+### ПО и железо
+
+- tarantool 1.6.3-348-g4657acc
+- mariadb 10.0.14-MariaDB
+- ОС ubuntu 13.10 64 bit
+
+- жесткий диск SSD Intel SSDSC2CW240A3
+
